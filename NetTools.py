@@ -1,5 +1,5 @@
-from view import *
-from menu import *
+from v import *
+from m import *
 import os
 import platform
 

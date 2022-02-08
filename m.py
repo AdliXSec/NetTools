@@ -1,5 +1,5 @@
 from hashlib import md5
-from library import *
+from l import *
 
 def menu():
     print("\n")
