@@ -9,6 +9,7 @@ def view1():
     print(" #   |_| \_|\___|\__|    |_|\___/ \___/|_|___/  #")
     print(" #   -----------------------------------------  #")
     print(" #   Author : AdliXSec                          #")
+    print(" #   Team   : Dark Clown Security               #")
     print(" #   Versi  : 0.1.0                             #")
     print(" #                                              #")  
     print(" ================================================")                                    
