@@ -8,6 +8,15 @@ if platform.system() == "Windows":
 else:
     hapus = "clear"
 
+ipreq = requests.get(f"http://ip-api.com/json/")
+
+if ipreq.status_code == 200:
+    ipdata = json.loads(ipreq.text)
+
+    if ipdata["status"] == "success":
+        ip = ipdata["query"]
+
+
 brown = "\033[33m"
 greenLight = "\033[32m"
 cyan = "\033[36m"
@@ -34,14 +43,6 @@ def view1():
     print("")
 
 def infouser():
-    ipreq = requests.get(f"http://ip-api.com/json/")
-
-    if ipreq.status_code == 200:
-        ipdata = json.loads(ipreq.text)
-
-        if ipdata["status"] == "success":
-            ip = ipdata["query"]
-
     print(white+"             Informasion System                  ")
     print("")
     print(brown+" [+] Your IP               : ",ip)
