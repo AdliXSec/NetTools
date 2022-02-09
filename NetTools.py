@@ -3,6 +3,12 @@ from m import *
 import os
 import platform
 
+if platform.system() == "Windows":
+    hapus = "cls"
+else:
+    hapus = "clear"
+
+os.system(hapus)
 jawab = "y"
 while(jawab == "y"):
     view1()

@@ -1,23 +1,32 @@
 from hashlib import md5
 from l import *
 
+brown = "\033[33m"
+greenLight = "\033[32m"
+cyan = "\033[36m"
+red = "\033[31m"
+yellow = "\033[33m"
+blue = "\033[34m"
+white = "\033[37m"
+purple = "\033[35m"
+
 def menu():
     print("\n")
-    print(" ============== MENU ==============")
+    print(blue+" ============== MENU ==============")
     print(" |                                |")
-    print(" | [1] Get IP From Host Name      |")
-    print(" | [2] TRACEROUTE IP              |")
-    print(" | [3] Hash Md5                   |")
-    print(" | [4] Hash sha1                  |")
-    print(" | [5] Md5 Cracking               |")
-    print(" | [6] Sha1 Cracking              |")
-    print(" | [7] TCP Sweep                  |")
-    print(" | [8] IP GeoLocation             |")
-    print(" | [9] Installing                 |")
-    print(" | [0] LogOut :)                  |")
-    print(" |                                |")
+    print(cyan+"   [1] Get IP From Host Name       ")
+    print("   [2] TRACEROUTE IP               ")
+    print("   [3] Hash Md5                    ")
+    print("   [4] Hash sha1                   ")
+    print("   [5] Md5 Cracking                ")
+    print("   [6] Sha1 Cracking               ")
+    print("   [7] TCP Sweep                   ")
+    print("   [8] IP GeoLocation              ")
+    print("   [9] Installing                  ")
+    print("   [0] LogOut :)                   ")
+    print(blue+" |                                |")
     print(" ==================================")
-    print(" ==================================")
+    print(blue+" ==================================")
     print(" |")
     pilih = int(input(" |= Select Menu => "))
     print("\n")
@@ -38,6 +47,10 @@ def menu():
         tcpsweep()
     elif pilih == int(8):
         ipgeo()
+    elif pilih == int(9):
+        installing()
+    elif pilih == int(0):
+        exit()
     
     
 

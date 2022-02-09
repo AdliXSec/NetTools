@@ -102,3 +102,6 @@ def ipgeo():
                     lon = ipdata["lon"]
                     maps = f"https://www.google.com/maps/@{lat},{lon},9z"
                     print(f" Maps : {maps}")
+
+def installing():
+    os.system("pip install requests")

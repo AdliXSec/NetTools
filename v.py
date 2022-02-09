@@ -6,36 +6,37 @@ if platform.system() == "Windows":
 else:
     hapus = "clear"
 
-green = "33[0;32m"
-greenLight = "33[32;1"
-blue = "33[0;36m"
-blueLight = "33[36;1m"
-red = "33[31;1m"
-yellow = "33[33;1m"
+brown = "\033[33m"
+greenLight = "\033[32m"
+cyan = "\033[36m"
+red = "\033[31m"
+yellow = "\033[33m"
+blue = "\033[34m"
+white = "\033[37m"
 
 
 def view1():
     os.system(hapus)
     print("")
-    print("  "+blue+" _   _      _     _______          _           ")
-    print("  "+blue+"| \ | |    | |   |__   __|        | |          ")
-    print("  "+blue+"|  \| | ___| |_     | | ___   ___ | |___       ")
-    print("  "+blue+"| . ` |/ _ \ __|    | |/ _ \ / _ \| / __|      ")
-    print("  "+blue+"| |\  |  __/ |_     | | (_) | (_) | \__ \      ")
-    print("  "+blue+"|_| \_|\___|\__|    |_|\___/ \___/|_|___/      ")
-    print("  "+yellow+"-----------------------------------------      ")
+    print(cyan+"   _   _      _     _______          _           ")
+    print("  | \ | |    | |   |__   __|        | |          ")
+    print("  |  \| | ___| |_     | | ___   ___ | |___       ")
+    print("  | . ` |/ _ \ __|    | |/ _ \ / _ \| / __|      ")
+    print("  | |\  |  __/ |_     | | (_) | (_) | \__ \      ")
+    print("  |_| \_|\___|\__|    |_|\___/ \___/|_|___/      ")
+    print(yellow+"  -----------------------------------------      ")
     print("")
-    print(" "+blueLight+"[+] Author                : AdliXSec            ")
-    print(" "+blueLight+"[+] Team                  : Dark Clown Security ")
-    print(" "+blueLight+"[+] Versi                 : 0.1.0               ")
+    print(red+" [+] Author                : AdliXSec            ")
+    print(" [+] Team                  : Dark Clown Security ")
+    print(" [+] Versi                 : 0.1.0               ")
     print("")
 
 def infouser():
-    print("             "+yellow+"Informasion System                  ")
+    print(white+"             Informasion System                  ")
     print("")
-    print(" "+blueLight+"[+] OS                    : ",platform.system())
-    print(" "+blueLight+"[+] Processor             : ",platform.processor())
-    print(" "+blueLight+"[+] Machine               : ",platform.machine())
-    print(" "+blueLight+"[+] System's network name : ",platform.node())
-    print(" "+blueLight+"[+] Platform Information  : ",platform.platform())
+    print(brown+" [+] OS                    : ",platform.system())
+    print(" [+] Processor             : ",platform.processor())
+    print(" [+] Machine               : ",platform.machine())
+    print(" [+] System's network name : ",platform.node())
+    print(" [+] Platform Information  : ",platform.platform())
                               
