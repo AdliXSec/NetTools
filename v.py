@@ -1,4 +1,13 @@
+import os
+import platform
+
+if platform.system() == "Windows":
+    hapus = "cls"
+else:
+    hapus = "clear"
+
 def view1():
+    os.system(hapus)
     print(" ================================================")
     print(" #                                              #")
     print(" #    _   _      _     _______          _       #")
