@@ -23,6 +23,8 @@ def view1():
     print("")
 
 def infouser():
+    print("             Informasion System                  ")
+    print("")
     print(" [+] OS                    : ",platform.system())
     print(" [+] Processor             : ",platform.processor())
     print(" [+] Machine               : ",platform.machine())
