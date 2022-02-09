@@ -53,7 +53,7 @@ def menu():
         b64encode()
     elif pilih == str(10):
         b64decode()
-    elif pilih == str(x):
+    elif pilih == "x":
         installing()
     elif pilih == str(0):
         exit()
