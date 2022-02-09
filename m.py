@@ -1,5 +1,6 @@
 from hashlib import md5
 from l import *
+import time
 
 brown = "\033[33m"
 greenLight = "\033[32m"
@@ -14,19 +15,33 @@ def menu():
     print("\n")
     print(blue+" ============== MENU ==============")
     print(" |                                |")
+    time.sleep(0.3)
     print(cyan+"   [1] Get IP From Host Name       ")
+    time.sleep(0.3)
     print("   [2] TRACEROUTE IP               ")
+    time.sleep(0.3)
     print("   [3] Hash Md5                    ")
+    time.sleep(0.3)
     print("   [4] Hash sha1                   ")
+    time.sleep(0.3)
     print("   [5] Md5 Cracking                ")
+    time.sleep(0.3)
     print("   [6] Sha1 Cracking               ")
+    time.sleep(0.3)
     print("   [7] TCP Sweep                   ")
+    time.sleep(0.3)
     print("   [8] IP GeoLocation              ")
+    time.sleep(0.3)
     print("   [9] Base64 Encode               ")
+    time.sleep(0.3)
     print("   [10] Base64 Decode              ")
+    time.sleep(0.3)
     print("   [11] Password Generator         ")
+    time.sleep(0.3)
     print("   [x] Installing                  ")
+    time.sleep(0.3)
     print("   [0] LogOut :)                   ")
+    time.sleep(0.3)
     print(blue+" |                                |")
     print(" ==================================")
     print(blue+" ==================================")
