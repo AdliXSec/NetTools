@@ -1,5 +1,7 @@
 import os
 import platform
+import requests
+import json
 
 if platform.system() == "Windows":
     hapus = "cls"
@@ -32,9 +34,18 @@ def view1():
     print("")
 
 def infouser():
+    ipreq = requests.get(f"http://ip-api.com/json/")
+
+    if ipreq.status_code == 200:
+        ipdata = json.loads(ipreq.text)
+
+        if ipdata["status"] == "success":
+            ip = ipdata["query"]
+
     print(white+"             Informasion System                  ")
     print("")
-    print(brown+" [+] OS                    : ",platform.system())
+    print(brown+" [+] Your IP               : ",ip)
+    print(" [+] OS                    : ",platform.system())
     print(" [+] Processor             : ",platform.processor())
     print(" [+] Machine               : ",platform.machine())
     print(" [+] System's network name : ",platform.node())
