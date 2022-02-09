@@ -22,34 +22,40 @@ def menu():
     print("   [6] Sha1 Cracking               ")
     print("   [7] TCP Sweep                   ")
     print("   [8] IP GeoLocation              ")
-    print("   [9] Installing                  ")
+    print("   [9] Base64 Encode               ")
+    print("   [10] Base64 Decode              ")
+    print("   [x] Installing                  ")
     print("   [0] LogOut :)                   ")
     print(blue+" |                                |")
     print(" ==================================")
     print(blue+" ==================================")
     print(" |")
-    pilih = int(input(" |= Select Menu => "))
+    pilih = input(" |= Select Menu => ")
     print("\n")
 
-    if pilih == int(1):
+    if pilih == str(1):
         getIP()
-    elif pilih == int(2):
+    elif pilih == str(2):
         tracerouter()
-    elif pilih == int(3):
+    elif pilih == str(3):
         hashmd5()
-    elif pilih == int(4):
+    elif pilih == str(4):
         hashsha()
-    elif pilih == int(5):
+    elif pilih == str(5):
         md5crack()
-    elif pilih == int(6):
+    elif pilih == str(6):
         sha1crack()
-    elif pilih == int(7):
+    elif pilih == str(7):
         tcpsweep()
-    elif pilih == int(8):
+    elif pilih == str(8):
         ipgeo()
-    elif pilih == int(9):
+    elif pilih == str(9):
+        b64encode()
+    elif pilih == str(10):
+        b64decode()
+    elif pilih == str(x):
         installing()
-    elif pilih == int(0):
+    elif pilih == str(0):
         exit()
     
     

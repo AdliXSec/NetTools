@@ -1,4 +1,4 @@
-import os, time, socket, platform, hashlib, requests, json
+import os, time, socket, platform, hashlib, requests, json, base64
 
 if platform.system() == "Windows":
     hapus = "cls"
@@ -104,4 +104,25 @@ def ipgeo():
                     print(f" Maps : {maps}")
 
 def installing():
+    os.system(hapus)
     os.system("pip install requests")
+
+def b64encode():
+    os.system(hapus)
+    sample_string = input(" Masukkan String : ")
+    sample_string_bytes = sample_string.encode("ascii")
+    
+    base64_bytes = base64.b64encode(sample_string_bytes)
+    base64_string = base64_bytes.decode("ascii")
+    
+    print(f" Encoded string: {base64_string}")
+
+def b64decode():
+    os.system(hapus)
+    sample_string = input(" Masukkan base64 : ")
+    sample_string_bytes = sample_string.encode("ascii")
+    
+    base64_bytes = base64.b64decode(sample_string_bytes)
+    base64_string = base64_bytes.decode("ascii")
+    
+    print(f" Decoded string: {base64_string}")
