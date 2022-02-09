@@ -24,6 +24,7 @@ def menu():
     print("   [8] IP GeoLocation              ")
     print("   [9] Base64 Encode               ")
     print("   [10] Base64 Decode              ")
+    print("   [11] Password Generator         ")
     print("   [x] Installing                  ")
     print("   [0] LogOut :)                   ")
     print(blue+" |                                |")
@@ -53,9 +54,12 @@ def menu():
         b64encode()
     elif pilih == str(10):
         b64decode()
+    elif pilih == str(11):
+        passwordGenerator()
     elif pilih == "x":
         installing()
     elif pilih == str(0):
+        print(greenLight+" Terimakasih Telah Berkunjung")
         exit()
     
     
