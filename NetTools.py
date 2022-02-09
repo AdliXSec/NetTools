@@ -3,19 +3,6 @@ from m import *
 import os
 import platform
 
-if platform.system() == "Windows":
-    hapus = "cls"
-else:
-    hapus = "clear"
-
-def warna(platform):
-    if platform == "Windows":
-        os.system("color a")
-    else:
-        print("33[31;1m")
-
-os.system(hapus)
-warna(platform.system())
 jawab = "y"
 while(jawab == "y"):
     view1()
