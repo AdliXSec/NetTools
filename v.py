@@ -6,6 +6,13 @@ if platform.system() == "Windows":
 else:
     hapus = "clear"
 
+green = "33[0;32m"
+greenLight = "33[32;1"
+blue = "33[0;36m"
+blueLight = "33[36;1m"
+red = "33[31;1m"
+
+
 def view1():
     os.system(hapus)
     print("")

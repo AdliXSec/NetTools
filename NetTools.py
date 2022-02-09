@@ -12,7 +12,7 @@ def warna(platform):
     if platform == "Windows":
         os.system("color a")
     else:
-        print("\033[92m")
+        print("33[31;1m")
 
 os.system(hapus)
 warna(platform.system())
