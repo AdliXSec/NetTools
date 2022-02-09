@@ -19,6 +19,7 @@ warna(platform.system())
 jawab = "y"
 while(jawab == "y"):
     view1()
+    infouser()
     menu()
     print("")
     jawab = input(" Lanjut Lagi? (y/n) : ")
