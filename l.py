@@ -17,7 +17,7 @@ else:
 def getIP():
     os.system(hapus)
     host = input(" url: ")
-    print(cyan+" IP nya: ",red, socket.gethostbyname(host))
+    print(cyan+" IP nya: ",greenLight, socket.gethostbyname(host))
 
 def tracerouter():
     os.system(hapus)
@@ -104,7 +104,7 @@ def ipgeo():
 
         if ipdata["status"] == "success":
             for key in ipdata:
-                print(f"{cyan} {key.capitalize()} : {red}{ipdata[key]}")
+                print(f"{cyan} {key.capitalize()} : {greenLight}{ipdata[key]}")
                 
                 if key == "lon":
                     lat = ipdata["lat"]
@@ -124,7 +124,7 @@ def b64encode():
     base64_bytes = base64.b64encode(sample_string_bytes)
     base64_string = base64_bytes.decode("ascii")
     
-    print(f"{cyan} Encoded string: {red}{base64_string}")
+    print(f"{cyan} Encoded string: {greenLight}{base64_string}")
 
 def b64decode():
     os.system(hapus)
@@ -134,7 +134,7 @@ def b64decode():
     base64_bytes = base64.b64decode(sample_string_bytes)
     base64_string = base64_bytes.decode("ascii")
     
-    print(f"{cyan} Decoded string: {red}{base64_string}")
+    print(f"{cyan} Decoded string: {greenLight}{base64_string}")
 
 def passwordGenerator():
     os.system(hapus)
@@ -150,8 +150,8 @@ def passwordGenerator():
     sha256.update(text.encode("utf-8"))
     sha384.update(text.encode("utf-8"))
     sha512.update(text.encode("utf-8"))
-    print(cyan+" Password hash sha1 : ",red, sha1.hexdigest())
-    print(cyan+" Password hash md5 : ",red, md5.hexdigest())
-    print(cyan+" Password hash sha256 : ",red, sha256.hexdigest())
-    print(cyan+" Password hash sha384 : ",red, sha384.hexdigest())
-    print(cyan+" Password hash sha512 : ",red, sha512.hexdigest())
+    print(cyan+" Password hash sha1 : ",greenLight, sha1.hexdigest())
+    print(cyan+" Password hash md5 : ",greenLight, md5.hexdigest())
+    print(cyan+" Password hash sha256 : ",greenLight, sha256.hexdigest())
+    print(cyan+" Password hash sha384 : ",greenLight, sha384.hexdigest())
+    print(cyan+" Password hash sha512 : ",greenLight, sha512.hexdigest())
