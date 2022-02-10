@@ -3,23 +3,8 @@ from m import *
 import os
 import platform
 import hashlib
-import msvcrt
 
-brown = "\033[33m"
-greenLight = "\033[32m"
-cyan = "\033[36m"
-red = "\033[31m"
-yellow = "\033[33m"
-blue = "\033[34m"
-white = "\033[37m"
-purple = "\033[35m"
-
-if platform.system() == "Windows":
-    hapus = "cls"
-else:
-    hapus = "clear"
-
-def getPass():
+def getPassWindows():
     passw = ''
     print(" # Masukkan Password ",greenLight, end='', flush=True)
     while True:
@@ -29,6 +14,36 @@ def getPass():
         print('*', end='', flush=True)
         passw +=x
     return passw
+
+def getPassLinux():
+    passw = ''
+    print(" # Masukkan Password ",greenLight, end='', flush=True)
+    while True:
+        x = getch.getch()
+        if x == '\r' or x == '\n':
+            break
+        print('*', end='', flush=True)
+        passw +=x
+    return passw
+
+if platform.system() == "Windows":
+    import msvcrt
+else:
+    import getch
+
+if platform.system() == "Windows":
+    hapus = "cls"
+else:
+    hapus = "clear"
+
+brown = "\033[33m"
+greenLight = "\033[32m"
+cyan = "\033[36m"
+red = "\033[31m"
+yellow = "\033[33m"
+blue = "\033[34m"
+white = "\033[37m"
+purple = "\033[35m"
     
 os.system(hapus)
 jawab = "y"
@@ -36,7 +51,10 @@ password = "0e40043cd9419473cecd3f56b625d337"
 view1()
 print(cyan+" ==========================================")
 print(" #")
-intPassword = getPass()
+if platform.system() == "Windows":
+    intPassword = getPassWindows()
+else:
+    intPassword = getPassLinux()
 sha = hashlib.md5()
 sha.update(intPassword.encode("utf-8"))
 if(sha.hexdigest() == password):
