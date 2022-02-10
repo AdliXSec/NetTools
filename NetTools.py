@@ -2,6 +2,7 @@ from v import *
 from m import *
 import os
 import platform
+import hashlib
 
 brown = "\033[33m"
 greenLight = "\033[32m"
@@ -19,13 +20,24 @@ else:
 
 os.system(hapus)
 jawab = "y"
-while(jawab == "y"):
-    view1()
-    infouser()
-    menu()
-    print("")
-    jawab = input(cyan+" Lanjut Lagi? (y/n) : ")
-    if(jawab == 'n'):
+password = "0e40043cd9419473cecd3f56b625d337"
+view1()
+print(cyan+" ==========================================")
+print(" #")
+intPassword = input(" #== Masukkan Password ==> "+greenLight)
+sha = hashlib.md5()
+sha.update(intPassword.encode("utf-8"))
+if(sha.hexdigest() == password):
+    while(jawab == "y"):
+        view1()
+        infouser()
+        menu()
         print("")
-        print(greenLight+" Terimakasih Telah Berkunjung")
-        exit()
+        jawab = input(cyan+" Lanjut Lagi? (y/n) : ")
+        if(jawab == 'n'):
+            print("")
+            print(greenLight+" Terimakasih Telah Berkunjung")
+            exit()
+else:
+    view1()
+    print(white+" Password "+red+intPassword+" SALAH \n")

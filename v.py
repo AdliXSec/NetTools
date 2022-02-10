@@ -40,7 +40,7 @@ def view1():
     print(red+" [+] Author                : AdliXSec            ")
     print(" [+] Team                  : Dark Clown Security ")
     print(" [+] Versi                 : 1.2.0               ")
-    print("")
+    print("\n")
 
 def infouser():
     print(white+"             Informasion System                  ")
