@@ -1,21 +1,9 @@
-import os
-import platform
-import requests
-import json
+import os, platform
 
 if platform.system() == "Windows":
     hapus = "cls"
 else:
     hapus = "clear"
-
-ipreq = requests.get(f"http://ip-api.com/json/")
-
-if ipreq.status_code == 200:
-    ipdata = json.loads(ipreq.text)
-
-    if ipdata["status"] == "success":
-        ip = ipdata["query"]
-
 
 brown = "\033[33m"
 greenLight = "\033[32m"
@@ -24,9 +12,9 @@ red = "\033[31m"
 yellow = "\033[33m"
 blue = "\033[34m"
 white = "\033[37m"
+purple = "\033[35m"
 
-
-def view1():
+def ins():
     os.system(hapus)
     print("")
     print(cyan+"   _   _      _     _______          _           ")
@@ -42,14 +30,10 @@ def view1():
     print(" [+] Versi                 : 2.0.0               ")
     print(" [+] Github                : https://github.com/AdliXSec")
     print("\n")
-
-def infouser():
-    print(white+"             Informasion System                  ")
-    print("")
-    print(brown+" [+] Your IP               : ",ip)
-    print(" [+] OS                    : ",platform.system())
-    print(" [+] Processor             : ",platform.processor())
-    print(" [+] Machine               : ",platform.machine())
-    print(" [+] System's network name : ",platform.node())
-    print(" [+] Platform Information  : ",platform.platform())
-                              
+    print(blue+" =============== Menu =============")
+    print(blue+" ||                               "+blue+"||")
+    print(blue+" || "+greenLight+"[1] Login                     "+blue+"||")
+    print(blue+" || "+purple+"[2] Install And Get Password  "+blue+"||")
+    print(blue+" || "+red+"[3] Logout :)                 "+blue+"||")
+    print(blue+" ||                               "+blue+"||")
+    print(blue+" ==================================")

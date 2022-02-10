@@ -114,7 +114,10 @@ def ipgeo():
 
 def installing():
     os.system(hapus)
+    os.system("python3 -m pip install --upgrade pip")
     os.system("pip install requests")
+    os.system("pip install getch")
+    print(greenLight+" Password : NetTools")
 
 def b64encode():
     os.system(hapus)
