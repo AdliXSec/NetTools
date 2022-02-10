@@ -74,7 +74,7 @@ def menu():
     elif pilih == "x":
         installing()
     elif pilih == str(0):
-        print(greenLight+" Terimakasih Telah Berkunjung")
+        print(greenLight+" Terimakasih Telah Berkunjung \n")
         exit()
     
     

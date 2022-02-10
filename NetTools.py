@@ -3,6 +3,7 @@ from m import *
 import os
 import platform
 import hashlib
+import msvcrt
 
 brown = "\033[33m"
 greenLight = "\033[32m"
@@ -18,13 +19,24 @@ if platform.system() == "Windows":
 else:
     hapus = "clear"
 
+def getPass():
+    passw = ''
+    print(" # Masukkan Password ",greenLight, end='', flush=True)
+    while True:
+        x = msvcrt.getch().decode("utf-8")
+        if x == '\r' or x == '\n':
+            break
+        print('*', end='', flush=True)
+        passw +=x
+    return passw
+    
 os.system(hapus)
 jawab = "y"
 password = "0e40043cd9419473cecd3f56b625d337"
 view1()
 print(cyan+" ==========================================")
 print(" #")
-intPassword = input(" #== Masukkan Password ==> "+greenLight)
+intPassword = getPass()
 sha = hashlib.md5()
 sha.update(intPassword.encode("utf-8"))
 if(sha.hexdigest() == password):
@@ -36,7 +48,7 @@ if(sha.hexdigest() == password):
         jawab = input(cyan+" Lanjut Lagi? (y/n) : ")
         if(jawab == 'n'):
             print("")
-            print(greenLight+" Terimakasih Telah Berkunjung")
+            print(greenLight+" Terimakasih Telah Berkunjung \n")
             exit()
 else:
     view1()
