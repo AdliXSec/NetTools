@@ -1,6 +1,6 @@
 # Net Tools
 
-<img src="example.jpg" height="350" width="350"><br>
+<center><img src="example.jpg" height="350" width="350"></center><br>
 
 ## Tutorial
 

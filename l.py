@@ -1,4 +1,5 @@
 import os, time, socket, platform, hashlib, requests, json, base64
+from bn import *
 
 brown = "\033[33m"
 greenLight = "\033[32m"
@@ -16,11 +17,13 @@ else:
 
 def getIP():
     os.system(hapus)
+    biphost()
     host = input(" url: ")
     print(cyan+" IP nya: ",greenLight, socket.gethostbyname(host))
 
 def tracerouter():
     os.system(hapus)
+    btrcip()
     ip = input("IP address target : ")
     results = os.popen("pathping "+str(ip))
     for i in results:
@@ -28,6 +31,7 @@ def tracerouter():
 
 def hashmd5():
     os.system(hapus)
+    bhmd5()
     text = input(" nilai string : ")
     md5 = hashlib.md5()
     md5.update(text.encode("utf-8"))
@@ -35,6 +39,7 @@ def hashmd5():
 
 def hashsha():
     os.system(hapus)
+    bhsha1()
     text = input(" nilai string : ")
     sha = hashlib.sha1()
     sha.update(text.encode("utf-8"))
@@ -42,6 +47,7 @@ def hashsha():
 
 def md5crack():
     os.system(hapus)
+    bmd5c()
     md5_c = input("Masukan md5 : ")
     pwd = open("password.txt", 'r')
     for password in pwd:
@@ -56,6 +62,7 @@ def md5crack():
 
 def sha1crack():
     os.system(hapus)
+    bsha1c()
     sha1_c = input("Masukan sha1 : ")
     pwd = open("password.txt", 'r')
     for password in pwd:
@@ -70,6 +77,7 @@ def sha1crack():
 
 def tcpsweep():
     os.system(hapus)
+    btcpsweep()
     net = input("IP Address : ")
     net1 = net.split(".")
     a = '.'
@@ -96,6 +104,7 @@ def tcpsweep():
 
 def ipgeo():
     os.system(hapus)
+    bipgeo()
     ipaddr = input(" Ip Address : ")
     ipreq = requests.get(f"http://ip-api.com/json/{ipaddr}")
 
@@ -121,6 +130,7 @@ def installing():
 
 def b64encode():
     os.system(hapus)
+    bb64enc()
     sample_string = input(" Masukkan String : ")
     sample_string_bytes = sample_string.encode("ascii")
     
@@ -131,6 +141,7 @@ def b64encode():
 
 def b64decode():
     os.system(hapus)
+    bb64dcd()
     sample_string = input(" Masukkan base64 : ")
     sample_string_bytes = sample_string.encode("ascii")
     
@@ -141,6 +152,7 @@ def b64decode():
 
 def passwordGenerator():
     os.system(hapus)
+    bpwg()
     text = input(" nilai string : ")
     sha1 = hashlib.sha1()
     md5 = hashlib.md5()
