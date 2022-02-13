@@ -42,18 +42,17 @@ from m import *
 import os
 import platform
 import hashlib
-import pyautogui
 
-def getPassWindows():
-    passw = ''
-    print(" # Masukkan Password ",greenLight, end='', flush=True)
-    while True:
-        x = msvcrt.getch().decode("utf-8")
-        if x == '\r' or x == '\n':
-            break
-        print('*', end='', flush=True)
-        passw +=x
-    return passw
+# def getPassWindows():
+#     passw = ''
+#     print(" # Masukkan Password ",greenLight, end='', flush=True)
+#     while True:
+#         x = msvcrt.getch().decode("utf-8")
+#         if x == '\r' or x == '\n':
+#             break
+#         print('*', end='', flush=True)
+#         passw +=x
+#     return passw
 
 def getPassLinux():
     passw = ''
@@ -67,7 +66,8 @@ def getPassLinux():
     return passw
 
 if platform.system() == "Windows":
-    import msvcrt
+    # import msvcrt
+    import pyautogui
 else:
     import getch
 
@@ -91,11 +91,11 @@ password = "0e40043cd9419473cecd3f56b625d337"
 view1()
 print(cyan+" ==========================================")
 print(" #")
-# if platform.system() == "Windows":
-#     intPassword = getPassWindows()
-# else:
-#     intPassword = getPassLinux()
-intPassword = pyautogui.password(" Enter A Password")
+if platform.system() == "Windows":
+    intPassword = pyautogui.password(" Enter A Password")
+else:
+    intPassword = getPassLinux()
+
 sha = hashlib.md5()
 sha.update(intPassword.encode("utf-8"))
 if(sha.hexdigest() == password):
