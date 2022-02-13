@@ -42,6 +42,7 @@ from m import *
 import os
 import platform
 import hashlib
+import pyautogui
 
 def getPassWindows():
     passw = ''
@@ -90,10 +91,11 @@ password = "0e40043cd9419473cecd3f56b625d337"
 view1()
 print(cyan+" ==========================================")
 print(" #")
-if platform.system() == "Windows":
-    intPassword = getPassWindows()
-else:
-    intPassword = getPassLinux()
+# if platform.system() == "Windows":
+#     intPassword = getPassWindows()
+# else:
+#     intPassword = getPassLinux()
+intPassword = pyautogui.password(" Enter A Password")
 sha = hashlib.md5()
 sha.update(intPassword.encode("utf-8"))
 if(sha.hexdigest() == password):
