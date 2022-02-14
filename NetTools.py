@@ -27,7 +27,10 @@ while(True):
         os.system(hapus)
         os.system("python3 -m pip install --upgrade pip")
         os.system("pip install requests")
-        os.system("pip install getch")
+        if platform.system() == "Windows":
+            os.system("pip install pyautogui")
+        else:
+            os.system("pip install getch")
         print(greenLight+" Password : NetTools \n")
         tanya = input( "Login? (y/n) : ")
         if tanya == "y":
