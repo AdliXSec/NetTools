@@ -38,6 +38,8 @@ def menu():
     time.sleep(0.1)
     print("   [11] Password Generator         ")
     time.sleep(0.1)
+    print("   [12] Password Checker         ")
+    time.sleep(0.1)
     print("   [x] Installing                  ")
     time.sleep(0.1)
     print("   [0] LogOut :)                   ")
@@ -71,6 +73,8 @@ def menu():
         b64decode()
     elif pilih == str(11):
         passwordGenerator()
+    elif pilih == str(12):
+        passwordChecker()
     elif pilih == "x":
         installing()
     elif pilih == str(0):

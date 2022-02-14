@@ -1,4 +1,5 @@
-import os, time, socket, platform, hashlib, requests, json, base64
+import os, time, socket, platform, hashlib, requests, json, base64, string
+from tokenize import Special
 from bn import *
 
 brown = "\033[33m"
@@ -170,3 +171,48 @@ def passwordGenerator():
     print(cyan+" Password hash sha256 : ",greenLight, sha256.hexdigest())
     print(cyan+" Password hash sha384 : ",greenLight, sha384.hexdigest())
     print(cyan+" Password hash sha512 : ",greenLight, sha512.hexdigest())
+
+def passwordChecker():
+    os.system(hapus)
+    bpwc()
+    password = input(" Masukkan Password untuk di cek : ")
+
+    upper_kontol = any([1 if c in string.ascii_uppercase else 0 for c in password])
+    lower_memek = any([1 if c in string.ascii_lowercase else 0 for c in password])
+    Special = any([1 if c in string.punctuation else 0 for c in password])
+    digitod = any([1 if c in string.digits else 0 for c in password])
+
+    charaktod = [upper_kontol, lower_memek, Special, digitod]
+
+    dowo = len(password)
+    score = 0
+
+    with open('password.txt', 'r') as f:
+        contol = f.read().splitlines()
+
+    if dowo > 8:
+        score += 1
+    if dowo > 12:
+        score += 1
+    if dowo > 17:
+        score += 1
+    if dowo > 20:
+        score += 1
+
+    if sum(charaktod) > 1:
+        score += 1
+    if sum(charaktod) > 2:
+        score += 1
+    if sum(charaktod) > 3:
+        score += 1
+    
+    if password in contol:
+        print(f"{red} Password anda sangat lemah karena berada di list password tools ini")
+    elif score < 4:
+        print(f"{red} Password Anda Lemah!!! score anda {str(score)} / 7")
+    elif score == 4:
+        print(f"{yellow} Password Anda OK! score anda {str(score)} / 7")
+    elif score > 4 and score < 6:
+        print(f"{yellow} Password Anda Lumayan Bagus score anda {str(score)} / 7")
+    elif score > 6:
+        print(f"{greenLight} Password Anda Sangat KUAT! score anda {str(score)} / 7")
