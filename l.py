@@ -1,6 +1,6 @@
 import os, time, socket, platform, hashlib, requests, json, base64, string
 from tokenize import Special
-from bn import *
+from v import *
 
 brown = "\033[33m"
 greenLight = "\033[32m"
