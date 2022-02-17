@@ -220,28 +220,21 @@ def passwordChecker():
 def admninfind():
     os.system(hapus)
     url = input(" Masukkan URL Website : ")
-    file = open('admin.txt', 'r')
 
-    start = "Start Scanning...\n"
-    for s in start:
-        sys.stdout.write(s)
-        sys.stdout.flush()
-        time.sleep(0.1)
-
+    
+    file = open("admin.txt", "r")	
     try:
         for link in file.read().splitlines():
             curl = url + link
-            req = requests.get(curl)
-            if req.status_code == 200:
-                print(white+" =======================")
-                print(greenLight+" Admin Find --> {}".format(curl))
-                print(white+" =======================")
+            res = requests.get(curl)
+            if res.status_code == 200:
+                print(white+" ======================")
+                print(greenLight+" [+] Admin panel found --> {} ".format(curl))
+                print(white+" ======================")
             else:
-                print(red+" Admin Not Found --> {}".format)
-
+                print(red+" [-] Not found --> {} ".format(curl))
+    
     except KeyboardInterrupt:
-        print(red+"Shutdown Request ! ")
+        print(red+" Shutdown Request ! ")
     except:
-        print(red+"Unknown Error ! ")
-
-    file.close()
+        print(red+" Unknown Error ! ")
