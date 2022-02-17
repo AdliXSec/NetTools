@@ -219,6 +219,7 @@ def passwordChecker():
 
 def admninfind():
     os.system(hapus)
+    baf()
     url = input(" Masukkan URL Website : ")
 
     
