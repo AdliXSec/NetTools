@@ -1,4 +1,4 @@
-import os, time, socket, platform, hashlib, requests, json, base64, string
+import os, time, socket, platform, hashlib, requests, json, base64, string, sys
 from tokenize import Special
 from v import *
 
@@ -216,3 +216,32 @@ def passwordChecker():
         print(f"{yellow} Password Anda Lumayan Bagus score anda {str(score)} / 7")
     elif score > 6:
         print(f"{greenLight} Password Anda Sangat KUAT! score anda {str(score)} / 7")
+
+def admninfind():
+    os.system(hapus)
+    url = input(" Masukkan URL Website : ")
+    file = open('admin.txt', 'r')
+
+    start = "Start Scanning...\n"
+    for s in start:
+        sys.stdout.write(s)
+        sys.stdout.flush()
+        time.sleep(0.1)
+
+    try:
+        for link in file.read().splitlines():
+            curl = url + link
+            req = requests.get(curl)
+            if req.status_code == 200:
+                print(white+" =======================")
+                print(greenLight+" Admin Find --> {}".format(curl))
+                print(white+" =======================")
+            else:
+                print(red+" Admin Not Found --> {}".format)
+
+    except KeyboardInterrupt:
+        print(red+"Shutdown Request ! ")
+    except:
+        print(red+"Unknown Error ! ")
+
+    file.close()

@@ -40,6 +40,8 @@ def menu():
     time.sleep(0.1)
     print("   [12] Password Checker         ")
     time.sleep(0.1)
+    print("   [13] Admin Finder        ")
+    time.sleep(0.1)
     print("   [x] Installing                  ")
     time.sleep(0.1)
     print("   [0] LogOut :)                   ")
@@ -75,6 +77,8 @@ def menu():
         passwordGenerator()
     elif pilih == str(12):
         passwordChecker()
+    elif pilih == str(13):
+        admninfind()
     elif pilih == "x":
         installing()
     elif pilih == str(0):
