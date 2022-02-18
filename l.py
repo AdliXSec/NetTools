@@ -1,5 +1,6 @@
 import os, time, socket, platform, hashlib, requests, json, base64, string, sys
 from tokenize import Special
+from urllib.request import urlopen
 from v import *
 
 brown = "\033[33m"
@@ -239,3 +240,50 @@ def admninfind():
         print(red+" Shutdown Request ! ")
     except:
         print(red+" Unknown Error ! ")
+
+def ClickjackingTester():
+    os.system(hapus)
+    def check(url):
+
+        try:
+            if "http" not in url: url = "http://" + url
+
+            data = urlopen(url)
+            headers = data.info()
+
+            if not "X-Frame-Options" in headers: return True
+
+        except: return False
+
+
+    def code_html(url):
+
+        code = white+"""
+    <html>
+    <head><title>Clickjack test page</title></head>
+    <body>
+        <p>Website is vulnerable to clickjacking!</p>
+        <iframe src="{}" width="500" height="500"></iframe>
+    </body>
+    </html>
+        """.format(url)
+
+        print(code)
+
+
+    site = input(" URL : ")
+
+        
+    print(greenLight+"\n[*] Checking " + site)
+    status = check(site)
+
+    if status:
+        print(greenLight+" [+] Website is vulnerable!")
+        print(" [*] Copy This Code and Try This")
+        code_html(site)
+        
+
+    elif not status: 
+        print(red+" [-] Website is not vulnerable!")
+    else: 
+        print(red+"ERROR Kontol")

@@ -42,6 +42,8 @@ def menu():
     time.sleep(0.1)
     print("   [13] Admin Finder        ")
     time.sleep(0.1)
+    print("   [14] Clickjacking Tester        ")
+    time.sleep(0.1)
     print("   [x] Installing                  ")
     time.sleep(0.1)
     print("   [0] LogOut :)                   ")
@@ -79,6 +81,8 @@ def menu():
         passwordChecker()
     elif pilih == str(13):
         admninfind()
+    elif pilih == str(14):
+        ClickjackingTester()
     elif pilih == "x":
         installing()
     elif pilih == str(0):
