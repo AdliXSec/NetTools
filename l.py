@@ -243,6 +243,7 @@ def admninfind():
 
 def ClickjackingTester():
     os.system(hapus)
+    bcjt()
     def check(url):
 
         try:
