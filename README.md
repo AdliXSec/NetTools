@@ -1,6 +1,6 @@
 # Net Tools
 
-<center><img src="example.jpg" height="350" width="350"></center><br>
+<center><img src="example.jpg" height="300" width="400"></center><br>
 
 ## Tutorial
 
@@ -13,7 +13,6 @@
 
 ### Note : 
 
-- Jika pip masih versi lama, disarankan untuk upgrade pip
 - Disarankan Installing Terlebih dahulu
 
 ## Warning

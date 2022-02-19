@@ -1,7 +1,5 @@
 import os
 import platform
-import requests
-import json
 
 if platform.system() == "Windows":
     hapus = "cls"
@@ -30,7 +28,7 @@ def view1():
     print("")
     print(red+" [+] Author                : AdliXSec            ")
     print(" [+] Team                  : Dark Clown Security ")
-    print(" [+] Versi                 : 2.0.0               ")
+    print(" [+] Versi                 : 2.5.0               ")
     print(" [+] Github                : https://github.com/AdliXSec")
     print("\n")
 
@@ -42,6 +40,30 @@ def infouser():
     print(" [+] Machine               : ",platform.machine())
     print(" [+] System's network name : ",platform.node())
     print(" [+] Platform Information  : ",platform.platform())
+
+def ins():
+    os.system(hapus)
+    print("")
+    print(cyan+"   _   _      _     _______          _           ")
+    print("  | \ | |    | |   |__   __|        | |          ")
+    print("  |  \| | ___| |_     | | ___   ___ | |___       ")
+    print("  | . ` |/ _ \ __|    | |/ _ \ / _ \| / __|      ")
+    print("  | |\  |  __/ |_     | | (_) | (_) | \__ \      ")
+    print("  |_| \_|\___|\__|    |_|\___/ \___/|_|___/      ")
+    print(yellow+"  __________________________________________")
+    print("")
+    print(red+" [+] Author                : AdliXSec            ")
+    print(" [+] Team                  : Dark Clown Security ")
+    print(" [+] Versi                 : 2.5.0               ")
+    print(" [+] Github                : https://github.com/AdliXSec")
+    print("\n")
+    print(blue+" =============== Menu =============")
+    print(blue+" ||                              "+blue+"||")
+    print(blue+" || "+greenLight+"[1] Login                    "+blue+"||")
+    print(blue+" || "+greenLight+"[2] Install And Get Password "+blue+"||")
+    print(blue+" || "+red+"[3] Logout :)                "+blue+"||")
+    print(blue+" ||                              "+blue+"||")
+    print(blue+" ==================================")
 
 def biphost():
     print(cyan+''' 
@@ -212,4 +234,16 @@ def bcjt():
     Click Jacking Tester
     
     ''')
-                              
+
+def bcmss():
+    print(cyan+'''
+      _____ __  __  _____    _____                 
+     / ____|  \/  |/ ____|  / ____|                
+    | |    | \  / | (___   | (___   ___ __ _ _ __  
+    | |    | |\/| |\___ \   \___ \ / __/ _` | '_ \ 
+    | |____| |  | |____) |  ____) | (_| (_| | | | |
+     \_____|_|  |_|_____/  |_____/ \___\__,_|_| |_|
+    _______________________________________________
+    CMS Scanner
+    
+    ''')

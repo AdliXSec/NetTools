@@ -1,4 +1,4 @@
-from vi import ins
+from v import ins
 import os, platform
 
 if platform.system() == "Windows":
@@ -27,10 +27,6 @@ while(True):
         os.system(hapus)
         os.system("python3 -m pip install --upgrade pip")
         os.system("pip install requests")
-        if platform.system() == "Windows":
-            os.system("pip install pyautogui")
-        else:
-            os.system("pip install getch")
         print(greenLight+" Password : NetTools \n")
         tanya = input( "Login? (y/n) : ")
         if tanya == "y":
@@ -45,34 +41,7 @@ from m import *
 import os
 import platform
 import hashlib
-
-# def getPassWindows():
-#     passw = ''
-#     print(" # Masukkan Password ",greenLight, end='', flush=True)
-#     while True:
-#         x = msvcrt.getch().decode("utf-8")
-#         if x == '\r' or x == '\n':
-#             break
-#         print('*', end='', flush=True)
-#         passw +=x
-#     return passw
-
-def getPassLinux():
-    passw = ''
-    print(" #= Masukkan Password ==>",greenLight, end='', flush=True)
-    while True:
-        x = getch.getch()
-        if x == '\r' or x == '\n':
-            break
-        print('*', end='', flush=True)
-        passw +=x
-    return passw
-
-if platform.system() == "Windows":
-    # import msvcrt
-    import pyautogui
-else:
-    import getch
+import getpass
 
 if platform.system() == "Windows":
     hapus = "cls"
@@ -94,10 +63,8 @@ password = "0e40043cd9419473cecd3f56b625d337"
 view1()
 print(cyan+" ==========================================")
 print(" #")
-if platform.system() == "Windows":
-    intPassword = pyautogui.password(" Enter A Password")
-else:
-    intPassword = getPassLinux()
+
+intPassword = getpass.getpass(" #== Masukkan Password ==> ")
 
 sha = hashlib.md5()
 sha.update(intPassword.encode("utf-8"))

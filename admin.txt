@@ -19,6 +19,7 @@
 /adm/
 /adm_user
 /adm_usr
+/admin01/
 /admin1.asp
 /admin1.htm
 /admin1.html

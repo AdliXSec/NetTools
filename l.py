@@ -260,14 +260,14 @@ def ClickjackingTester():
     def code_html(url):
 
         code = white+"""
-    <html>
-    <head><title>Clickjack test page</title></head>
-    <body>
-        <p>Website is vulnerable to clickjacking!</p>
-        <iframe src="{}" width="500" height="500"></iframe>
-    </body>
-    </html>
-        """.format(url)
+    """+red+"""<html>
+    """+blue+"""    <head><title>"""+white+"""Clickjack test page"""+blue+"""</title></head>
+        <body>
+            <p>"""+white+"""Website is vulnerable to clickjacking!"""+blue+"""</p>
+            <iframe """+yellow+"""src"""+white+"""=" """+url+""" " """+yellow+"""width"""+white+"""="500" """+yellow+"""height"""+white+"""="500" """+blue+"""></iframe>
+        </body>
+    """+red+"""</html>
+        """
 
         print(code)
 
@@ -275,7 +275,7 @@ def ClickjackingTester():
     site = input(" URL : ")
 
         
-    print(greenLight+"\n[*] Checking " + site)
+    print(greenLight+"\n [*] Checking " + site)
     status = check(site)
 
     if status:
@@ -288,3 +288,22 @@ def ClickjackingTester():
         print(red+" [-] Website is not vulnerable!")
     else: 
         print(red+"ERROR Kontol")
+
+def cmsscan():
+    os.system(hapus)
+    bcmss()
+    url = input(" Masukkan URL : "+yellow)
+    cmsop = requests.get(url+'/admin',timeout=7)
+    cmsjoomla = requests.get(url + '/administrator/index.php',timeout=7)
+    cmswp = requests.get(url + '/wp-login.php',timeout=7)
+    cmsdrupal = requests.get(url + '/admin',timeout=7)
+    if "dashboard" in cmsop.text:
+        print(greenLight+" [+]  CMS Found -->"+yellow+" OPencarte", red + url + '\n')
+    elif "Joomla" in cmsjoomla.text:
+        print(greenLight+" [+]  CMS Found -->"+yellow+" Joomla", red + url + '\n')
+    elif "WordPress" in cmswp.text:
+        print(greenLight+" [+]  CMS Found -->"+yellow+" Wordpress", red + url + '\n')
+    elif "sites/default" in cmsdrupal.text:
+        print(greenLight+" [+]  CMS Found -->"+yellow+" Drupal", red + url + '\n')
+    else:
+        print(red+' [-] Cms Not Found --> ' + url + '\n')

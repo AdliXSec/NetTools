@@ -38,11 +38,13 @@ def menu():
     time.sleep(0.1)
     print("   [11] Password Generator         ")
     time.sleep(0.1)
-    print("   [12] Password Checker         ")
+    print("   [12] Password Checker           ")
     time.sleep(0.1)
-    print("   [13] Admin Finder        ")
+    print("   [13] Admin Finder               ")
     time.sleep(0.1)
     print("   [14] Clickjacking Tester        ")
+    time.sleep(0.1)
+    print("   [15] CMS Scanner                ")
     time.sleep(0.1)
     print("   [x] Installing                  ")
     time.sleep(0.1)
@@ -83,6 +85,8 @@ def menu():
         admninfind()
     elif pilih == str(14):
         ClickjackingTester()
+    elif pilih == str(15):
+        cmsscan()
     elif pilih == "x":
         installing()
     elif pilih == str(0):
